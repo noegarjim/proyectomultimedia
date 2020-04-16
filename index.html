@@ -1,0 +1,59 @@
+<HTML>
+  <meta charset="UTF-8"> 
+  <BODY>
+    <div>
+      <p><h1>Global configuration:</h1></p>
+      Population:
+      <input type="range" min="100" max="10000" value="1000" id="sliderPop">
+      <span id="sliderAmountPop"></span>
+      <p>
+	<input type="checkbox" onclick="usePseudorandom()" name="redC" value="true" checked> Use pseudo-random numbers <br>
+ </p>
+    </div>
+    <p><h1>1D Example:</h1> <button onclick="newSeed()">Generate new seed for random numbers</button> </p>
+    <canvas id="myCanvas" width="500" height="400" style="border:0px solid #d3d3d3;">
+      Your browser does not support the HTML5 canvas tag.</canvas>
+    <p>
+      <div>
+	Distance:
+	<input type="range" min="0" max="100" value="0" id="slider">
+	<span id="sliderAmount"></span>
+      </div>
+      <div>
+	<input type="checkbox" onclick="setColors()" name="colors" value="true" checked> Two colors <br>
+      </div>
+    </p>
+
+    <p><h1>2D Example:</h1> <button onclick="newSeed()">Generate new seed for random numbers</button></p>
+    <canvas id="myCanvas2" width="820" height="400" onmousemove="onMove(event)" onclick="onClick(event)" style="border:0px solid #d3d3d3;">
+      Your browser does not support the HTML5 canvas tag.</canvas>
+    <div>
+      Weight:
+      <input type="range" min="0" max="1000" value="500" id="sliderWeight">
+      <span id="sliderWeightAmount"></span>
+      <input type="checkbox" onclick="enable2DA()" name="redC" value="true" checked> Red
+      <input type="checkbox" onclick="enable2DB()" name="blueC" value="true" checked> Blue
+      <input type="checkbox" onclick="enable2DC()" name="greenC" value="true" checked> Green
+    </div>
+    <select id="dstConfig" onclick="dstSelect()">
+      <option>Left Vertical line</option>
+      <option>Middle Vertical line</option>
+      <option>Right Vertical line</option>
+      <option>Top Horizontal line</option>
+      <option>Middle Horizontal line</option>
+      <option>Botton Horizontal line</option>
+      <option>Diagonal</option>
+      <option>Cross</option>
+      <option>Fill</option>
+      <option>Empty</option>
+    </select>
+    Grid value: <span id="gridValue"></span>
+    <div>
+      <input type="checkbox" onclick="forceEdges()" name="onEedges" value="false" > Force distribution A at distance 0
+      <input type="range" min="0" max="1000" value="0" id="sliderBlankDistance">
+      <span id="sliderBlankAmount"></span>
+
+    </div>
+    <script src="distr.js"></script>
+  </BODY>
+</HTML>
